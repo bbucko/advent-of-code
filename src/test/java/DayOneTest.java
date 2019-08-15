@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DayOneTest {
@@ -9,18 +7,18 @@ class DayOneTest {
     private final DayOne dayOne = new DayOne();
 
     @Test
-    void testPlusOnes() {
-        assertEquals(3, dayOne.process(List.of("+1", "+1", "+1")));
+    void testPlusMinus() {
+        assertEquals(0, dayOne.process(new int[]{1, -1}));
     }
 
     @Test
-    void testPlusOneAndMinusTwo() {
-        assertEquals(0, dayOne.process(List.of("+1", "+1", "-2")));
+    void testTen() {
+        assertEquals(10, dayOne.process(new int[]{+3, +3, +4, -2, -4}));
     }
 
     @Test
-    void testMinusOneTwoThree() {
-        assertEquals(-6, dayOne.process(List.of("-1", "-2", "-3")));
+    void testFirstLong() {
+        assertEquals(5, dayOne.process(new int[]{-6, +3, +8, +5, -6}));
     }
 
 }
