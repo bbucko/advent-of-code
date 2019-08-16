@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,13 +9,13 @@ class DayTwoTest {
     private final DayTwo dayTwo = new DayTwo();
 
     @Test
-    void testNoRepeats() {
-        assertEquals(0, dayTwo.process(List.of("abcdef")));
+    void testOneCharacterDifferent() {
+        assertEquals("ac", dayTwo.process(Arrays.asList("abc", "adc")));
     }
 
     @Test
-    void testBothRepeats() {
-        assertEquals(1, dayTwo.process(List.of("bababc")));
+    void testTwoCharactersDifferent() {
+        assertEquals("not found", dayTwo.process(Arrays.asList("abc", "ade")));
     }
 
 }
